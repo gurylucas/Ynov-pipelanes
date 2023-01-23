@@ -56,7 +56,7 @@ jobs:
           pytest --doctest-modules --ignore=main.py
 
   deploy:
-    if: ${{ github.event.test.conclusion == 'success' }}
+    if: jobs.test.outcome == 'success'
     runs-on: ubuntu-latest
 
     steps:
