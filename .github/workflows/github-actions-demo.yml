@@ -33,6 +33,7 @@ jobs:
 
 
   test:
+    id: test_id
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -56,6 +57,7 @@ jobs:
           pytest --doctest-modules --ignore=main.py
 
   deploy:
+    if: jobs.test_id.outcome == 'success'
     runs-on: ubuntu-latest
 
     steps:
