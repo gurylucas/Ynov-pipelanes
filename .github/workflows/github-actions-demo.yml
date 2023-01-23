@@ -68,7 +68,7 @@ jobs:
           coverage-badge -o coverage.svg -f
 
       - name: Commit changes
-        uses: EndBug/add-and-commit@v9 
+        uses: EndBug/add-and-commit@v9
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           message: 'Modif coverage'
