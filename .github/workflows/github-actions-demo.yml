@@ -45,6 +45,11 @@ jobs:
       - name: Test with Pytest
         run: |
           pytest --doctest-modules --ignore=main.py
+      
+      - name: Test with Tox
+        run: |
+          pip install tox
+          tox
 
   deploy:
     runs-on: ubuntu-latest
