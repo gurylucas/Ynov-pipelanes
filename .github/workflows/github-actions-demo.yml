@@ -79,5 +79,5 @@ jobs:
     needs: [deploy]
 
     steps:
-      - name: MEP
+      - name: MEP_slack
         run: echo 'Slack'
