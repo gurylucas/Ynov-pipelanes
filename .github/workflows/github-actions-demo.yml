@@ -59,8 +59,8 @@ jobs:
 
       - name: Code Coverage
         run: |
-          pytest --cov=. . --doctest-modules --ignore=main.py --cov-report html:cov_html
-          coverage-badge -o coverage.svg
+          pytest --cov=. . --doctest-modules --ignore=main.py
+          coverage-badge -o coverage.svg -f
 
   deploy:
     runs-on: ubuntu-latest
