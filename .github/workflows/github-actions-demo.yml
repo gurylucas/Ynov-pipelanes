@@ -9,20 +9,17 @@ jobs:
       - run: flake8 main.py
       - run: pip install Black
       - run: Black main.py
-
   Test: 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: pip install flake8
       - run: flake8 main.py
-
   Print CD: 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: echo 'test'
-
   Ping UP: 
     runs-on: ubuntu-latest
     steps:
