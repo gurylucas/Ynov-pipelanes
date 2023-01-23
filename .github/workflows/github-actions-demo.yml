@@ -2,15 +2,20 @@ name: Test
 on: push
 jobs:
   Flake8:
-    runs-on: python-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: pip install flake8
       - run: flake8 main.py
     
   Black:
-    runs-on: python-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: pip install Black
       - run: Black main.py
+
+  Test: 
+    runs-on: ubuntu-latest
+    steps:
+      - 
