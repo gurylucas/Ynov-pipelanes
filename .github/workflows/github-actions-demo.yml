@@ -33,7 +33,6 @@ jobs:
 
 
   test:
-    id: test_id
     runs-on: ubuntu-latest
     strategy:
       matrix:
