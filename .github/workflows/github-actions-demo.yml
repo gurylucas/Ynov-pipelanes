@@ -27,7 +27,7 @@ jobs:
           flake8 .
 
       - name: Lint with black
-        if: steps.lint.outcome == 'success'
+        needs: [lint]
         run: |
           black . --check
         
