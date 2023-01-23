@@ -1,8 +1,8 @@
 name: YNOV pipeline CI/CD
 
 on:
-  push
-  workflow_dispatch
+  [push]
+  [workflow_dispatch]
 
 
 
