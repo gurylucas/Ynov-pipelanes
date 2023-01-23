@@ -75,6 +75,7 @@ jobs:
 
   after-deploy:
     runs-on: ubuntu-latest
+    if: ${{ always() }}
     needs: [deploy]
 
     steps:
