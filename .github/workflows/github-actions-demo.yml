@@ -62,12 +62,13 @@ jobs:
           pytest --cov=. . --doctest-modules --ignore=main.py
           coverage-badge -o coverage.svg -f
 
-      - uses: EndBug/add-and-commit@v9
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
         with:
           author_name: gurylucas
           author_email: contact.gury@gmail.com
-          message: 'Add the very useful text file'
-          add: '*.svg --force'
+          message: 'Modif coverage'
+          add: 'coverage.svg'
         
 
   deploy:
