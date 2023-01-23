@@ -22,12 +22,14 @@ jobs:
           pip install flake8 black
 
       - name: Lint with flake8
+        id: lint
         run: |
           flake8 .
 
       - name: Lint with black
         run: |
           black . --check
+        if: steps.lint.outcome == 'success'
 
 
   test:
