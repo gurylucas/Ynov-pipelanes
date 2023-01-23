@@ -57,8 +57,8 @@ jobs:
           pytest --doctest-modules --ignore=main.py
 
   deploy:
-    if: jobs.test_id.outcome == 'success'
     runs-on: ubuntu-latest
+    needs: [test]
 
     steps:
       - name: MEP
