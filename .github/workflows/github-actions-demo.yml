@@ -95,29 +95,3 @@ jobs:
     steps:
       - name: MEP_slack
         run: echo 'Slack'
-
-  afterafter:
-       environment:
-           name: github-pages
-           url: ${{ steps.deployment.outputs.page_url }}
-       runs-on: ubuntu-latest
-       steps:
-           - name: Checkout
-             uses: actions/checkout@v3
-           - name: Code Coverage
-             run: |
-              pip install pytest
-              pip install pytest-cov
-              pip install coverage-badge
-              pytest --cov=. . --doctest-modules --ignore=main.py --cov-report html:cov_html
-              coverage-badge -o coverage.svg -f
-           - name: Setup Pages
-             uses: actions/configure-pages@v2
-           - name: Upload artifact
-             uses: actions/upload-pages-artifact@v1
-             with:
-                 # Upload the coverage directory from the repository
-                 path: './cov_html'
-           - name: Deploy to GitHub Pages
-             id: deployment
-             uses: actions/deploy-pages@v1
