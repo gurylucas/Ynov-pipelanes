@@ -71,9 +71,9 @@ jobs:
   deploy:
     environment:
       name: prod
+      needs: [test (3.9)]
     runs-on: ubuntu-latest
     needs: [test]
-      
 
     steps:
       - name: MEP
