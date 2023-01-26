@@ -30,8 +30,10 @@ jobs:
        steps:
            - name: Checkout
              uses: actions/checkout@v3
-           - run: yarn
-           - run: yarn coverage:combined
+           - name: Code Coverage
+             run: |
+              pytest --cov=. . --doctest-modules --ignore=main.py --cov-report html:cov_html
+              coverage-badge -o coverage.svg -f
            - name: Setup Pages
              uses: actions/configure-pages@v2
            - name: Upload artifact
