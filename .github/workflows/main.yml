@@ -32,6 +32,9 @@ jobs:
              uses: actions/checkout@v3
            - name: Code Coverage
              run: |
+              pip install pytest
+              pip install pytest-cov
+              pip install coverage-badge
               pytest --cov=. . --doctest-modules --ignore=main.py --cov-report html:cov_html
               coverage-badge -o coverage.svg -f
            - name: Setup Pages
