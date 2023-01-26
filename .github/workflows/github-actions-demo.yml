@@ -74,7 +74,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [test]
 
-    steps:
+    steps: 
       - name: MEP
         run: echo "MEP on server"
 
